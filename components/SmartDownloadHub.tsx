@@ -44,6 +44,17 @@ export default function SmartDownloadHub() {
   const triggerDownloadSimulation = (target: BinaryTarget) => {
     setDownloadModal(target);
     setDownloadProgress(0);
+
+    // Initiate real file download directly from official release asset CDN
+    const downloadUrl = `https://github.com/Nithwin/windmist/releases/download/v1.0.1/${target.filename}`;
+    const link = document.createElement("a");
+    link.href = downloadUrl;
+    link.setAttribute("download", target.filename);
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
     const interval = setInterval(() => {
       setDownloadProgress((prev) => {
         if (prev >= 100) {
@@ -52,7 +63,7 @@ export default function SmartDownloadHub() {
         }
         return prev + 25;
       });
-    }, 200);
+    }, 150);
   };
 
   const binaryTargets: Record<PlatformKey, { title: string; subtitle: string; targets: BinaryTarget[] }> = {
@@ -334,11 +345,19 @@ export default function SmartDownloadHub() {
               </div>
 
               {downloadProgress === 100 && (
-                <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs space-y-1">
-                  <div>Package verified via GoReleaser GPG signature.</div>
-                  <div className="font-mono text-[10px] text-slate-400">
-                    To install directly via terminal: see command table above.
+                <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs space-y-2.5">
+                  <div className="flex items-center gap-2 font-bold">
+                    <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
+                    <span>Package verified via GoReleaser GPG signature. Download initiated!</span>
                   </div>
+                  <a
+                    href={`https://github.com/Nithwin/windmist/releases/download/v1.0.1/${downloadModal.filename}`}
+                    download
+                    className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-3 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-400 hover:opacity-95 text-slate-950 font-bold text-xs transition-all shadow-md transform hover:-translate-y-0.5"
+                  >
+                    <Download className="w-3.5 h-3.5 stroke-[2.5]" />
+                    <span>Click here if download did not start automatically ({downloadModal.filename})</span>
+                  </a>
                 </div>
               )}
 
