@@ -1,7 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Copy, Check, Play, RefreshCw, Cpu, HardDrive, ShieldCheck, Sparkles, Code2, Zap } from "lucide-react";
+import Link from "next/link";
+import { Copy, Check, Play, RefreshCw, Cpu, HardDrive, ShieldCheck, Sparkles, Code2, Zap, Download, BookOpen } from "lucide-react";
+import BlurText from "@/components/reactbits/BlurText";
+import ShinyText from "@/components/reactbits/ShinyText";
+import StarBorder from "@/components/reactbits/StarBorder";
 
 type OSTab = "maclinux" | "go" | "source" | "windows";
 
@@ -106,11 +110,11 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-6">
+        <div className="text-center max-w-5xl mx-auto mb-6">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight sm:leading-[1.12]">
-            The AI Software Engineering Agent That Lives in{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff] drop-shadow-[0_0_35px_rgba(0,242,254,0.4)]">
-              Your Terminal.
+            <BlurText text="The AI Software Engineering Agent That Lives in" delay={60} animateBy="words" className="justify-center" />{" "}
+            <span className="block mt-2">
+              <ShinyText text="Your Terminal." speed={4} className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff] drop-shadow-[0_0_35px_rgba(0,242,254,0.4)]" />
             </span>
           </h1>
         </div>
@@ -193,6 +197,26 @@ export default function Hero() {
                 <span>Single static binary (&lt;18MB) • Zero CGO</span>
               </span>
             </div>
+          </div>
+
+          {/* Action CTAs leading to separate download & docs pages */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+            <Link href="/download" className="w-full sm:w-auto">
+              <StarBorder as="div" color="#00f2fe" speed="3s" className="w-full sm:w-auto cursor-pointer group hover:scale-105 transition-transform duration-300">
+                <div className="flex items-center justify-center gap-2.5 font-bold text-sm text-white">
+                  <Download className="w-4 h-4 text-[#00f2fe] animate-bounce" />
+                  <span>Download WindMist v1.0.1 Portal</span>
+                </div>
+              </StarBorder>
+            </Link>
+
+            <Link
+              href="/docs"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-[#111622] hover:bg-white/10 text-slate-200 hover:text-white font-semibold text-sm border border-white/10 flex items-center justify-center gap-2.5 transition-all shadow-md group hover:border-[#00a8ff]/40"
+            >
+              <BookOpen className="w-4 h-4 text-[#00a8ff] group-hover:scale-110 transition-transform" />
+              <span>Explore Documentation</span>
+            </Link>
           </div>
         </div>
 

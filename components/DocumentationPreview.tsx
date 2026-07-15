@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { BookOpen, FileCode, Terminal, Settings, Copy, Check, ExternalLink, ArrowRight, GitBranch } from "lucide-react";
+import SpotlightCard from "@/components/reactbits/SpotlightCard";
 
 export default function DocumentationPreview() {
   const [activeTab, setActiveTab] = useState<"quickstart" | "config" | "contributing">("quickstart");
@@ -18,20 +19,22 @@ ai:
   max_context_tokens: 1048576
   temperature: 0.2
   system_prompt_preset: "software_architect_v2"
+  timeout_seconds: 120
+  retry_count: 3
 
 filesystem:
-  executor_mode: "pure_data_atomic" # Single read/write per file
-  backup_before_patch: true
+  transaction_engine: "atomic_single_pass"
+  create_backup: true
+  auto_format: true
   ignore_patterns:
+    - "*.tmp"
     - ".git/**"
-    - "node_modules/**"
     - "vendor/**"
 
-ui:
-  theme: "cyclone" # Lip Gloss theme (cyclone, obsidian, classic)
-  render_markdown_tables: true
-  word_wrap_width: 100
-`;
+tui:
+  theme: "cyclone" # cyclone, obsidian, matrix
+  glamour_word_wrap: true
+  header_banner: true`;
 
   const quickstartSnippet = `# 1. Install WindMist CLI universally
 curl -sSL https://raw.githubusercontent.com/Nithwin/windmist/main/scripts/install.sh | bash
@@ -54,9 +57,9 @@ windmist apply --yes`;
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-[#0b0e14] relative border-t border-white/10">
+    <section className="py-20 lg:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
+        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
           {/* Left Column: Doc Navigation & Highlights */}
           <div className="lg:w-5/12 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00f2fe]/10 border border-[#00f2fe]/30 text-[#00f2fe] text-xs font-mono font-bold uppercase tracking-wider">
@@ -126,15 +129,15 @@ windmist apply --yes`;
                     <GitBranch className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-bold text-sm">Contributing & Changelog</div>
-                    <div className="text-xs text-slate-500 font-mono">CONTRIBUTING.md & CHANGELOG.md</div>
+                    <div className="font-bold text-sm">Contributing Rules & Architecture</div>
+                    <div className="text-xs text-slate-500 font-mono">Race condition policy & GoReleaser CI</div>
                   </div>
                 </div>
                 <ArrowRight className="w-4 h-4 text-slate-500" />
               </button>
             </div>
 
-            <div className="pt-4">
+            <div className="pt-2">
               <Link
                 href="/docs"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#111622] hover:bg-[#192030] text-white text-sm font-bold border border-white/10 hover:border-[#00f2fe]/40 transition-all shadow-lg group"
@@ -146,7 +149,7 @@ windmist apply --yes`;
           </div>
 
           {/* Right Column: Code & Documentation Visualizer */}
-          <div className="lg:w-7/12 w-full rounded-3xl bg-[#111622] border border-white/10 shadow-[0_0_60px_-15px_rgba(0,242,254,0.2)] overflow-hidden font-mono text-xs">
+          <SpotlightCard className="lg:w-7/12 w-full font-mono text-xs shadow-[0_0_60px_-15px_rgba(0,242,254,0.2)]">
             <div className="flex items-center justify-between px-5 py-3.5 bg-[#06080c] border-b border-white/10">
               <div className="flex items-center gap-2">
                 <FileCode className="w-4 h-4 text-[#00f2fe]" />
@@ -235,7 +238,7 @@ windmist apply --yes`;
                 </div>
               )}
             </div>
-          </div>
+          </SpotlightCard>
         </div>
       </div>
     </section>

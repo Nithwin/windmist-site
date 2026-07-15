@@ -46,7 +46,14 @@ export const metadata: Metadata = {
     description:
       "The AI Software Engineering Agent That Lives in Your Terminal. Zero external dependencies. High-performance Go architecture.",
   },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
+
+import SmoothScroll from "@/components/reactbits/SmoothScroll";
 
 export default function RootLayout({
   children,
@@ -59,7 +66,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${jetbrainsMono.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#0b0e14] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-white">
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

@@ -13,9 +13,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-white/20 via-[#00f2fe]/20 to-[#00a8ff]/30 border border-[#00f2fe]/40 overflow-hidden">
-                <Image src="/logo.png" alt="WindMist Logo" width={28} height={28} className="object-contain drop-shadow-[0_0_6px_rgba(0,242,254,0.8)]" />
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="flex items-center justify-center w-11 h-11 group-hover:scale-110 transition-transform duration-300">
+                <Image src="/logo.png" alt="WindMist Logo" width={42} height={42} className="object-contain" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white group-hover:text-[#00f2fe] transition-colors">
                 WindMist
@@ -83,17 +83,17 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#download" className="hover:text-[#00f2fe] transition-colors">
+                <Link href="/download" className="hover:text-[#00f2fe] transition-colors">
                   Linux (`x86_64` & `arm64` Tarball)
                 </Link>
               </li>
               <li>
-                <Link href="/#download" className="hover:text-[#00f2fe] transition-colors">
+                <Link href="/download" className="hover:text-[#00f2fe] transition-colors">
                   Windows `.zip` Archives (x64 & ARM64)
                 </Link>
               </li>
               <li>
-                <Link href="/#download" className="hover:text-[#00f2fe] transition-colors">
+                <Link href="/download" className="hover:text-[#00f2fe] transition-colors">
                   Source Code Archive (`.tar.gz`)
                 </Link>
               </li>
@@ -106,6 +106,11 @@ export default function Footer() {
               Open Source Portal
             </h4>
             <ul className="space-y-2">
+              <li>
+                <Link href="/download" className="hover:text-[#00f2fe] transition-colors font-bold text-white flex items-center gap-1">
+                  Download & Install Hub
+                </Link>
+              </li>
               <li>
                 <Link href="/docs" className="hover:text-[#00f2fe] transition-colors flex items-center gap-1">
                   <span>Quick-Start Manual</span>

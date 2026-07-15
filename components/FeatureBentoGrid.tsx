@@ -2,6 +2,9 @@
 
 import React, { useState } from "react";
 import { Cpu, HardDrive, Terminal, Shield, CheckCircle, Layers, Play } from "lucide-react";
+import SpotlightCard from "@/components/reactbits/SpotlightCard";
+import BlurText from "@/components/reactbits/BlurText";
+import ShinyText from "@/components/reactbits/ShinyText";
 
 export default function FeatureBentoGrid() {
   const [selectedAIModel, setSelectedAIModel] = useState<"pro" | "flash">("pro");
@@ -27,7 +30,9 @@ export default function FeatureBentoGrid() {
             <Layers className="w-3.5 h-3.5" /> Architectural Superpowers
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
-            Engineered for <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff]">Pure Performance</span> & Precision
+            <BlurText text="Engineered for" delay={50} animateBy="words" className="justify-center inline-flex" />{" "}
+            <ShinyText text="Pure Performance" speed={3} className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff]" />{" "}
+            <span>& Precision</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
             WindMist combines modular Go design patterns with state-of-the-art terminal rendering and decoupled filesystem transaction engines.
@@ -37,7 +42,7 @@ export default function FeatureBentoGrid() {
         {/* Bento Grid Container */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Card 1: Modular AI Engine (Span 7) */}
-          <div className="md:col-span-7 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#111622] via-[#111622]/90 to-[#192030] border border-white/10 hover:border-[#00f2fe]/40 transition-all duration-300 shadow-xl flex flex-col justify-between group">
+          <SpotlightCard className="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between group shadow-xl">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="p-3.5 rounded-2xl bg-[#00f2fe]/15 text-[#00f2fe] shadow-inner group-hover:scale-110 transition-transform">
@@ -106,10 +111,10 @@ export default function FeatureBentoGrid() {
                 </div>
               </div>
             </div>
-          </div>
+          </SpotlightCard>
 
           {/* Card 2: Pure-Data Patch Executor (Span 5) */}
-          <div className="md:col-span-5 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#111622] via-[#111622]/90 to-[#192030] border border-white/10 hover:border-emerald-500/40 transition-all duration-300 shadow-xl flex flex-col justify-between group">
+          <SpotlightCard className="md:col-span-5 p-6 sm:p-8 flex flex-col justify-between group shadow-xl">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="p-3.5 rounded-2xl bg-emerald-500/15 text-emerald-400 shadow-inner group-hover:scale-110 transition-transform">
@@ -146,10 +151,10 @@ export default function FeatureBentoGrid() {
                 </div>
               </div>
             </div>
-          </div>
+          </SpotlightCard>
 
           {/* Card 3: Lip Gloss & Glamour TUI (Span 6) */}
-          <div className="md:col-span-6 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#111622] via-[#111622]/90 to-[#192030] border border-white/10 hover:border-[#00f2fe]/40 transition-all duration-300 shadow-xl flex flex-col justify-between group">
+          <SpotlightCard className="md:col-span-6 p-6 sm:p-8 flex flex-col justify-between group shadow-xl">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="p-3.5 rounded-2xl bg-[#00f2fe]/15 text-[#00f2fe] shadow-inner group-hover:scale-110 transition-transform">
@@ -221,10 +226,10 @@ export default function FeatureBentoGrid() {
                 </div>
               </div>
             </div>
-          </div>
+          </SpotlightCard>
 
           {/* Card 4: Professional Go Architecture (Span 6) */}
-          <div className="md:col-span-6 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#111622] via-[#111622]/90 to-[#192030] border border-white/10 hover:border-cyan-500/40 transition-all duration-300 shadow-xl flex flex-col justify-between group">
+          <SpotlightCard className="md:col-span-6 p-6 sm:p-8 flex flex-col justify-between group shadow-xl">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="p-3.5 rounded-2xl bg-cyan-500/15 text-cyan-400 shadow-inner group-hover:scale-110 transition-transform">
@@ -274,7 +279,7 @@ export default function FeatureBentoGrid() {
                 </div>
               </div>
             </div>
-          </div>
+          </SpotlightCard>
         </div>
       </div>
     </section>

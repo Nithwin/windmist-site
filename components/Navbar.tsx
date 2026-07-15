@@ -30,7 +30,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Overview", href: "/" },
     { name: "Features", href: "/#features" },
-    { name: "Install Hub", href: "/#download" },
+    { name: "Download", href: "/download" },
     { name: "Documentation", href: "/docs" },
   ];
 
@@ -46,9 +46,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo & Brand */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-white/20 via-[#00f2fe]/20 to-[#00a8ff]/30 border border-[#00f2fe]/40 shadow-[0_0_20px_rgba(0,242,254,0.3)] group-hover:border-white/60 group-hover:scale-105 transition-all duration-300 overflow-hidden">
-              <Image src="/logo.png" alt="WindMist Logo" width={34} height={34} className="object-contain drop-shadow-[0_0_8px_rgba(0,242,254,0.8)] animate-pulse-slow" />
-              <div className="absolute inset-0 rounded-xl bg-white/10 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative flex items-center justify-center w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+              <Image src="/logo.png" alt="WindMist Logo" width={48} height={48} className="object-contain" priority />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
