@@ -139,7 +139,7 @@ export default function SmartDownloadHub() {
             <Download className="w-3.5 h-3.5" /> Smart Download & Installation Hub
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
-            Get <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00f2fe] via-cyan-300 to-[#6a11cb]">WindMist v1.0.1</span> for Your OS
+            Get <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff]">WindMist v1.0.1</span> for Your OS
           </h2>
           <p className="text-slate-400 text-base sm:text-lg mb-6">
             Every release is built automatically via GitHub Actions & GoReleaser, ensuring verifiable SHA256 checksums and zero CGO dependencies.
@@ -149,7 +149,7 @@ export default function SmartDownloadHub() {
               href="https://github.com/Nithwin/windmist/releases/tag/v1.0.1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#00f2fe] to-[#6a11cb] text-slate-950 font-bold text-sm hover:opacity-95 shadow-[0_0_20px_rgba(0,242,254,0.3)] transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff] text-slate-950 font-bold text-sm hover:opacity-95 shadow-[0_0_20px_rgba(0,242,254,0.4)] transition-all transform hover:-translate-y-0.5"
             >
               <span>Official Release v1.0.1 on GitHub</span>
             </a>
@@ -165,7 +165,7 @@ export default function SmartDownloadHub() {
         </div>
 
         {/* Smart OS Auto-Detection Banner */}
-        <div className="max-w-4xl mx-auto mb-10 p-5 rounded-2xl bg-gradient-to-r from-[#00f2fe]/10 via-[#6a11cb]/15 to-[#00f2fe]/10 border border-[#00f2fe]/40 backdrop-blur-xl shadow-[0_0_40px_rgba(0,242,254,0.15)] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-4xl mx-auto mb-10 p-5 rounded-2xl bg-gradient-to-r from-[#00f2fe]/15 via-white/5 to-[#00a8ff]/15 border border-[#00f2fe]/40 backdrop-blur-xl shadow-[0_0_40px_rgba(0,242,254,0.15)] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <div className="p-3 rounded-xl bg-[#00f2fe]/20 text-[#00f2fe] shrink-0 shadow-inner">
               <Sparkles className="w-6 h-6 animate-pulse" />
@@ -256,7 +256,7 @@ export default function SmartDownloadHub() {
                 <div className="flex items-center gap-3 shrink-0">
                   <button
                     onClick={() => triggerDownloadSimulation(target)}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#00f2fe] to-[#6a11cb] text-slate-950 font-bold text-sm hover:opacity-95 shadow-[0_0_20px_rgba(0,242,254,0.3)] transition-all transform hover:-translate-y-0.5"
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff] text-slate-950 font-bold text-sm hover:opacity-95 shadow-[0_0_20px_rgba(0,242,254,0.4)] transition-all transform hover:-translate-y-0.5"
                   >
                     <Download className="w-4 h-4 stroke-[2.5]" />
                     <span>Download {target.type === "tarball" ? ".tar.gz" : `.${target.type}`}</span>
@@ -328,7 +328,7 @@ export default function SmartDownloadHub() {
               {/* Progress Bar */}
               <div className="w-full h-2.5 rounded-full bg-[#06080c] overflow-hidden border border-white/10">
                 <div
-                  className="h-full bg-gradient-to-r from-[#00f2fe] to-[#6a11cb] transition-all duration-300"
+                  className="h-full bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff] transition-all duration-300"
                   style={{ width: `${downloadProgress}%` }}
                 />
               </div>

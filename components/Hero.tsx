@@ -87,7 +87,7 @@ export default function Hero() {
   return (
     <section className="relative pt-10 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
       {/* Background Neon Glows & Cyclone Gradients */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[900px] h-[450px] bg-gradient-to-tr from-[#00f2fe]/20 via-[#6a11cb]/25 to-[#00f2fe]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[900px] h-[450px] bg-gradient-to-tr from-[#00f2fe]/25 via-white/15 to-[#00a8ff]/20 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-[#00f2fe]/15 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse-slow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,7 +109,7 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto mb-6">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight sm:leading-[1.12]">
             The AI Software Engineering Agent That Lives in{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00f2fe] via-cyan-200 to-[#6a11cb] drop-shadow-[0_0_35px_rgba(0,242,254,0.4)]">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff] drop-shadow-[0_0_35px_rgba(0,242,254,0.4)]">
               Your Terminal.
             </span>
           </h1>
@@ -137,7 +137,7 @@ export default function Hero() {
                       onClick={() => setActiveTab(tabKey)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
                         isActive
-                          ? "bg-gradient-to-r from-[#00f2fe] to-[#6a11cb] text-slate-950 font-bold shadow-[0_0_15px_rgba(0,242,254,0.3)]"
+                          ? "bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff] text-slate-950 font-bold shadow-[0_0_20px_rgba(0,242,254,0.4)]"
                           : "text-slate-400 hover:text-white hover:bg-white/5"
                       }`}
                     >
@@ -310,10 +310,10 @@ export default function Hero() {
                       </div>
 
                       {/* AI Thinking / Stream Bubble */}
-                      <div className="p-4 rounded-xl bg-[#111622] border-l-4 border-[#6a11cb] space-y-3 shadow-md">
+                      <div className="p-4 rounded-xl bg-[#111622] border-l-4 border-[#00f2fe] space-y-3 shadow-[0_0_15px_rgba(0,242,254,0.15)]">
                         <div className="flex items-center justify-between text-xs border-b border-white/10 pb-2">
                           <span className="flex items-center gap-2 text-[#3CFAFA] font-bold">
-                            <Sparkles className="w-4 h-4 text-[#00f2fe]" /> WindMist Agent (`internal/ai`):
+                            <Sparkles className="w-4 h-4 text-[#00f2fe]" /> WindMist Agent (`internal/providers/gemini`):
                           </span>
                           <span className="text-slate-400">Tokens: 4,120 / 1M • Latency: 320ms</span>
                         </div>

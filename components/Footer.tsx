@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Wind, ExternalLink, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { ExternalLink, ShieldCheck } from "lucide-react";
 import { GithubIcon } from "@/components/GithubIcon";
 
 export default function Footer() {
@@ -13,8 +14,8 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-[#00f2fe]/20 to-[#6a11cb]/30 border border-[#00f2fe]/30 text-[#00f2fe]">
-                <Wind className="w-5 h-5" />
+              <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-white/20 via-[#00f2fe]/20 to-[#00a8ff]/30 border border-[#00f2fe]/40 overflow-hidden">
+                <Image src="/logo.png" alt="WindMist Logo" width={28} height={28} className="object-contain drop-shadow-[0_0_6px_rgba(0,242,254,0.8)]" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white group-hover:text-[#00f2fe] transition-colors">
                 WindMist

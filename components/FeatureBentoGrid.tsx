@@ -18,16 +18,16 @@ export default function FeatureBentoGrid() {
   return (
     <section id="features" className="py-20 lg:py-32 relative overflow-hidden">
       {/* Background radial highlights */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-to-tr from-[#6a11cb]/15 to-[#00f2fe]/10 rounded-full blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-to-tr from-[#00a8ff]/20 to-[#00f2fe]/15 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#6a11cb]/15 border border-[#6a11cb]/30 text-purple-300 text-xs font-mono font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00f2fe]/15 border border-[#00f2fe]/30 text-[#00f2fe] text-xs font-mono font-bold uppercase tracking-wider mb-4">
             <Layers className="w-3.5 h-3.5" /> Architectural Superpowers
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
-            Engineered for <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00f2fe] via-cyan-300 to-[#6a11cb]">Pure Performance</span> & Precision
+            Engineered for <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff]">Pure Performance</span> & Precision
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
             WindMist combines modular Go design patterns with state-of-the-art terminal rendering and decoupled filesystem transaction engines.
@@ -139,7 +139,7 @@ export default function FeatureBentoGrid() {
                   <span className="h-2 w-2 rounded-full bg-[#00f2fe]" /> 1. Calculate Multi-Turn Tool AST (`internal/agent`)
                 </div>
                 <div className="flex items-center gap-2 text-slate-300">
-                  <span className="h-2 w-2 rounded-full bg-purple-400" /> 2. Validate Target File Checksums & Locks
+                  <span className="h-2 w-2 rounded-full bg-[#00a8ff]" /> 2. Validate Target File Checksums & Locks
                 </div>
                 <div className="flex items-center gap-2 text-emerald-400 font-bold bg-emerald-500/10 p-1.5 rounded border border-emerald-500/20">
                   <CheckCircle className="w-3.5 h-3.5 shrink-0" /> 3. Atomic Single-Pass Disk Write (`Executor`)
@@ -149,10 +149,10 @@ export default function FeatureBentoGrid() {
           </div>
 
           {/* Card 3: Lip Gloss & Glamour TUI (Span 6) */}
-          <div className="md:col-span-6 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#111622] via-[#111622]/90 to-[#192030] border border-white/10 hover:border-purple-500/40 transition-all duration-300 shadow-xl flex flex-col justify-between group">
+          <div className="md:col-span-6 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#111622] via-[#111622]/90 to-[#192030] border border-white/10 hover:border-[#00f2fe]/40 transition-all duration-300 shadow-xl flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-6">
-                <div className="p-3.5 rounded-2xl bg-purple-500/15 text-purple-400 shadow-inner group-hover:scale-110 transition-transform">
+                <div className="p-3.5 rounded-2xl bg-[#00f2fe]/15 text-[#00f2fe] shadow-inner group-hover:scale-110 transition-transform">
                   <Terminal className="w-6 h-6" />
                 </div>
                 <div className="mb-4">
@@ -183,7 +183,7 @@ export default function FeatureBentoGrid() {
                       onClick={() => setTuiTheme(thm)}
                       className={`px-2.5 py-0.5 rounded text-[10px] capitalize transition-all ${
                         tuiTheme === thm
-                          ? "bg-gradient-to-r from-[#00f2fe] to-[#6a11cb] text-slate-950 font-bold"
+                          ? "bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff] text-slate-950 font-bold"
                           : "text-slate-400 hover:text-white"
                       }`}
                     >

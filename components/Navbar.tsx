@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Terminal, Sparkles, Copy, Check, Menu, X, Wind, ArrowRight } from "lucide-react";
+import { Terminal, Sparkles, Copy, Check, Menu, X, ArrowRight } from "lucide-react";
 import { GithubIcon } from "@/components/GithubIcon";
 
 export default function Navbar() {
@@ -45,9 +46,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo & Brand */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-[#00f2fe]/20 to-[#6a11cb]/30 border border-[#00f2fe]/30 shadow-[0_0_20px_rgba(0,242,254,0.2)] group-hover:border-[#00f2fe]/60 group-hover:scale-105 transition-all duration-300">
-              <Wind className="w-6 h-6 text-[#00f2fe] animate-pulse-slow" />
-              <div className="absolute inset-0 rounded-xl bg-[#00f2fe]/10 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-white/20 via-[#00f2fe]/20 to-[#00a8ff]/30 border border-[#00f2fe]/40 shadow-[0_0_20px_rgba(0,242,254,0.3)] group-hover:border-white/60 group-hover:scale-105 transition-all duration-300 overflow-hidden">
+              <Image src="/logo.png" alt="WindMist Logo" width={34} height={34} className="object-contain drop-shadow-[0_0_8px_rgba(0,242,254,0.8)] animate-pulse-slow" />
+              <div className="absolute inset-0 rounded-xl bg-white/10 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
@@ -74,7 +75,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                     isActive
-                      ? "bg-gradient-to-r from-[#00f2fe]/20 to-[#6a11cb]/20 text-[#00f2fe] border border-[#00f2fe]/30 shadow-[0_0_15px_rgba(0,242,254,0.1)]"
+                      ? "bg-gradient-to-r from-white/20 via-[#00f2fe]/20 to-[#00a8ff]/20 text-[#00f2fe] border border-[#00f2fe]/40 shadow-[0_0_15px_rgba(0,242,254,0.2)]"
                       : "text-slate-300 hover:text-white hover:bg-white/5"
                   }`}
                 >
@@ -108,7 +109,7 @@ export default function Navbar() {
               href="https://github.com/Nithwin/windmist"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#00f2fe] to-[#6a11cb] hover:opacity-95 text-xs font-bold text-slate-950 hover:text-white transition-all duration-300 shadow-[0_0_25px_rgba(0,242,254,0.3)] hover:shadow-[0_0_35px_rgba(0,242,254,0.5)] transform hover:-translate-y-0.5"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff] hover:opacity-95 text-xs font-bold text-slate-950 hover:text-slate-900 transition-all duration-300 shadow-[0_0_25px_rgba(0,242,254,0.4)] hover:shadow-[0_0_35px_rgba(255,255,255,0.6)] transform hover:-translate-y-0.5"
             >
               <GithubIcon className="w-4 h-4" />
               <span>Star on GitHub</span>
@@ -167,7 +168,7 @@ export default function Navbar() {
               href="https://github.com/Nithwin/windmist"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#00f2fe] to-[#6a11cb] text-sm font-bold text-slate-950 shadow-lg"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff] text-sm font-bold text-slate-950 shadow-[0_0_20px_rgba(0,242,254,0.3)]"
             >
               <GithubIcon className="w-4 h-4" />
               <span>Star on GitHub (v1.0.1)</span>

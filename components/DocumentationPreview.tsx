@@ -64,7 +64,7 @@ windmist apply --yes`;
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-              Everything You Need to <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00f2fe] to-[#6a11cb]">Master WindMist</span>
+              Everything You Need to <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00f2fe] to-[#00a8ff]">Master WindMist</span>
             </h2>
 
             <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
@@ -102,7 +102,7 @@ windmist apply --yes`;
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-400">
+                  <div className="p-2.5 rounded-xl bg-[#00a8ff]/15 text-[#00a8ff]">
                     <Settings className="w-5 h-5" />
                   </div>
                   <div>
@@ -217,7 +217,7 @@ windmist apply --yes`;
 
                   <div className="p-4 rounded-2xl bg-[#06080c] border border-white/10 space-y-3">
                     <h4 className="text-base font-bold text-white flex items-center gap-2">
-                      <ExternalLink className="w-4 h-4 text-purple-400" /> CHANGELOG.md — v1.0.1 Highlights
+                      <ExternalLink className="w-4 h-4 text-[#00f2fe]" /> CHANGELOG.md — v1.0.1 Highlights
                     </h4>
                     <div className="space-y-2 text-xs font-mono">
                       <div className="flex items-center justify-between text-emerald-400">

@@ -11,8 +11,8 @@
     --obsidian-600: #242e44;
     --cyber-cyan: #00f2fe;
     --cyber-cyan-glow: rgba(0, 242, 254, 0.25);
-    --storm-purple: #6a11cb;
-    --storm-purple-glow: rgba(106, 17, 203, 0.25);
+    --storm-purple: #00a8ff;
+    --storm-purple-glow: rgba(0, 168, 255, 0.25);
     --glamour-green: #04B575;
     --glamour-cyan: #3CFAFA;
     --glamour-magenta: #FF5F87;
@@ -41,9 +41,9 @@
   --font-sans: var(--font-outfit), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
   
-  --backgroundImage-cyclone-gradient: linear-gradient(135deg, #00f2fe 0%, #6a11cb 100%);
+  --backgroundImage-cyclone-gradient: linear-gradient(135deg, #ffffff 0%, #00f2fe 50%, #00a8ff 100%);
   --backgroundImage-obsidian-gradient: linear-gradient(180deg, #0b0e14 0%, #111622 100%);
-  --backgroundImage-glow-radial: radial-gradient(circle at center, rgba(0, 242, 254, 0.15) 0%, rgba(106, 17, 203, 0.1) 40%, transparent 70%);
+  --backgroundImage-glow-radial: radial-gradient(circle at center, rgba(0, 242, 254, 0.25) 0%, rgba(255, 255, 255, 0.15) 40%, transparent 70%);
 }
 
 body {

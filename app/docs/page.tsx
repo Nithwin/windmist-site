@@ -58,7 +58,7 @@ export default function DocsPage() {
                       onClick={() => setActiveDocSection(sec.id)}
                       className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all text-left ${
                         isActive
-                          ? "bg-gradient-to-r from-[#00f2fe]/20 to-[#6a11cb]/20 text-[#00f2fe] border border-[#00f2fe]/40 font-bold shadow-[0_0_15px_rgba(0,242,254,0.15)]"
+                          ? "bg-gradient-to-r from-white/20 via-[#00f2fe]/20 to-[#00a8ff]/20 text-[#00f2fe] border border-[#00f2fe]/40 font-bold shadow-[0_0_15px_rgba(0,242,254,0.15)]"
                           : "text-slate-400 hover:text-white hover:bg-white/5"
                       }`}
                     >
@@ -130,7 +130,7 @@ export default function DocsPage() {
 
                   <div className="space-y-3 pt-4 border-t border-white/10">
                     <h3 className="text-base font-bold text-white flex items-center gap-2">
-                      <span className="h-6 w-6 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs font-bold">2</span>
+                      <span className="h-6 w-6 rounded-full bg-[#00a8ff]/20 text-[#00a8ff] flex items-center justify-center text-xs font-bold">2</span>
                       Authenticate with Gemini AI Provider
                     </h3>
                     <p className="text-xs text-slate-400">
@@ -224,7 +224,7 @@ ui:
                         <strong className="text-[#00f2fe]">Gemini 2.5 Pro & Flash Integration:</strong> Full native support for massive context windows up to 1M+ tokens without context degradation or token truncation.
                       </li>
                       <li>
-                        <strong className="text-purple-400">Structured Prompt Building (`internal/ai/prompts.go`):</strong> System instructions are automatically injected with AST constraints and git diff context rules.
+                        <strong className="text-[#00a8ff]">Structured Prompt Building (`internal/ai/prompts.go`):</strong> System instructions are automatically injected with AST constraints and git diff context rules.
                       </li>
                       <li>
                         <strong className="text-emerald-400">Dynamic Context Truncation:</strong> When processing giant repositories, WindMist uses AST pruning to feed only relevant package definitions and exported identifiers to the model.
@@ -266,7 +266,7 @@ ui:
                       <div className="text-slate-400">Single atomic disk read of target file into memory buffer.</div>
                     </div>
                     <div className="p-4 rounded-xl bg-[#06080c] border border-white/10 space-y-1">
-                      <div className="text-purple-400 font-bold">Step 2: Verify & Apply</div>
+                      <div className="text-[#00a8ff] font-bold">Step 2: Verify & Apply</div>
                       <div className="text-slate-400">Validate line hashes and apply unified diff changes in RAM.</div>
                     </div>
                     <div className="p-4 rounded-xl bg-[#06080c] border border-emerald-500/30 space-y-1">
@@ -304,7 +304,7 @@ ui:
                     <pre className="text-slate-200 overflow-x-auto">
 {`var (
     ColorCyberCyan   = lipgloss.Color("#00f2fe")
-    ColorStormPurple = lipgloss.Color("#6a11cb")
+    ColorIceCyan     = lipgloss.Color("#00a8ff")
     ColorSuccess     = lipgloss.Color("#04B575")
     ColorAccentCyan  = lipgloss.Color("#3CFAFA")
     ColorHeader      = lipgloss.Color("#FF5F87")
@@ -338,7 +338,7 @@ ui:
                   </div>
 
                   <div className="p-4 rounded-2xl bg-[#06080c] border border-white/5 space-y-2">
-                    <div className="font-bold text-purple-400 text-sm">2. Decoupled Package Boundaries</div>
+                    <div className="font-bold text-[#00a8ff] text-sm">2. Decoupled Package Boundaries</div>
                     <p className="text-slate-400 text-xs">
                       Keep `internal/ai` strictly responsible for prompt formatting and response decoding. Keep `internal/tools/filesystem` strictly responsible for disk I/O. Never import `internal/ui` inside `internal/filesystem`.
                     </p>
