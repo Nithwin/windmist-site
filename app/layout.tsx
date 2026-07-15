@@ -51,6 +51,21 @@ export const metadata: Metadata = {
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
+  metadataBase: new URL("https://windmist.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 import SmoothScroll from "@/components/reactbits/SmoothScroll";
@@ -67,6 +82,34 @@ export default function RootLayout({
       className={`${outfit.variable} ${jetbrainsMono.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#0b0e14] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-white relative">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "WindMist",
+              "operatingSystem": "Linux, macOS, Windows",
+              "applicationCategory": "DeveloperApplication",
+              "offers": {
+                "@type": "Offer",
+                "price": "0.00",
+                "priceCurrency": "USD"
+              },
+              "downloadUrl": "https://windmist.vercel.app/download",
+              "softwareVersion": "1.0.1",
+              "author": {
+                "@type": "Organization",
+                "name": "WindMist Contributors",
+                "url": "https://github.com/Nithwin/windmist"
+              },
+              "sameAs": [
+                "https://github.com/Nithwin/windmist"
+              ],
+              "description": "The AI Software Engineering Agent That Lives in Your Terminal. Professional-grade Go CLI with modular AI engines, zero-latency filesystem editing, and Lip Gloss TUI rendering."
+            })
+          }}
+        />
         <SmoothScroll>
           <AnimatedBackground />
           <div className="relative z-10 flex flex-col min-h-screen">
