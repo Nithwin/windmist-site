@@ -54,6 +54,7 @@ export const metadata: Metadata = {
 };
 
 import SmoothScroll from "@/components/reactbits/SmoothScroll";
+import AnimatedBackground from "@/components/reactbits/AnimatedBackground";
 
 export default function RootLayout({
   children,
@@ -65,8 +66,13 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${jetbrainsMono.variable} dark h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#0b0e14] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-white">
-        <SmoothScroll>{children}</SmoothScroll>
+      <body className="min-h-full flex flex-col bg-[#0b0e14] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-white relative">
+        <SmoothScroll>
+          <AnimatedBackground />
+          <div className="relative z-10 flex flex-col min-h-screen">
+            {children}
+          </div>
+        </SmoothScroll>
       </body>
     </html>
   );
