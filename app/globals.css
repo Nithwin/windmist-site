@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  :root {
+    --background: #0b0e14;
+    --foreground: #f1f5f9;
+    --obsidian-950: #06080c;
+    --obsidian-900: #0b0e14;
+    --obsidian-800: #111622;
+    --obsidian-700: #192030;
+    --obsidian-600: #242e44;
+    --cyber-cyan: #00f2fe;
+    --cyber-cyan-glow: rgba(0, 242, 254, 0.25);
+    --storm-purple: #6a11cb;
+    --storm-purple-glow: rgba(106, 17, 203, 0.25);
+    --glamour-green: #04B575;
+    --glamour-cyan: #3CFAFA;
+    --glamour-magenta: #FF5F87;
+    --glamour-yellow: #F1FA8C;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  
+  --color-obsidian-950: var(--obsidian-950);
+  --color-obsidian-900: var(--obsidian-900);
+  --color-obsidian-800: var(--obsidian-800);
+  --color-obsidian-700: var(--obsidian-700);
+  --color-obsidian-600: var(--obsidian-600);
+  
+  --color-cyber-cyan: var(--cyber-cyan);
+  --color-storm-purple: var(--storm-purple);
+  
+  --color-glamour-green: var(--glamour-green);
+  --color-glamour-cyan: var(--glamour-cyan);
+  --color-glamour-magenta: var(--glamour-magenta);
+  --color-glamour-yellow: var(--glamour-yellow);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+  
+  --backgroundImage-cyclone-gradient: linear-gradient(135deg, #00f2fe 0%, #6a11cb 100%);
+  --backgroundImage-obsidian-gradient: linear-gradient(180deg, #0b0e14 0%, #111622 100%);
+  --backgroundImage-glow-radial: radial-gradient(circle at center, rgba(0, 242, 254, 0.15) 0%, rgba(106, 17, 203, 0.1) 40%, transparent 70%);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  selection-background-color: #00f2fe;
+  selection-color: #0b0e14;
+}
+
+::selection {
+  background-color: rgba(0, 242, 254, 0.3);
+  color: #ffffff;
+}
+
+/* Custom scrollbar for deep obsidian vibe */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0e14;
+}
+::-webkit-scrollbar-thumb {
+  background: #192030;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #242e44;
+  border-color: rgba(0, 242, 254, 0.3);
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 25s linear infinite;
+}
+
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float-subtle 5s ease-in-out infinite;
 }
