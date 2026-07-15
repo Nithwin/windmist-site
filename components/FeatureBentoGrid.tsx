@@ -43,14 +43,16 @@ export default function FeatureBentoGrid() {
                 <div className="p-3.5 rounded-2xl bg-[#00f2fe]/15 text-[#00f2fe] shadow-inner group-hover:scale-110 transition-transform">
                   <Cpu className="w-6 h-6" />
                 </div>
-                <span className="px-3 py-1 rounded-full font-mono text-xs bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                  package internal/ai
-                </span>
+                <div className="text-xs font-mono text-slate-400 bg-black/40 px-3 py-1.5 rounded-lg border border-white/5 w-fit">
+                  package internal/providers/gemini
+                </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">
-                First-Class Modular AI Engine (`internal/ai`)
-              </h3>
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                  Native Gemini Provider & Agent Loop (`internal/providers`)
+                </h3>
+              </div>
               <p className="text-slate-300 text-sm leading-relaxed mb-6">
                 Built from the ground up for multi-turn software architecture tasks. Features first-class Google Gemini (`gemini-2.5-pro` and `gemini-2.5-flash`) integrations with structured prompt building, system prompt overriding, and dynamic token context tracking up to <strong className="text-white">1,048,576 tokens</strong>.
               </p>
@@ -60,6 +62,9 @@ export default function FeatureBentoGrid() {
             <div className="p-4 rounded-2xl bg-[#06080c] border border-white/10 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-slate-400">Select Active Provider Preset:</span>
+                <div className="text-xs font-mono text-slate-400 bg-black/40 px-3 py-1 rounded-lg border border-white/5 w-fit">
+                  internal/tools/... (15 atomic tools)
+                </div>
                 <div className="flex gap-1.5 bg-[#111622] p-1 rounded-xl border border-white/10">
                   <button
                     onClick={() => setSelectedAIModel("pro")}
@@ -111,7 +116,7 @@ export default function FeatureBentoGrid() {
                   <HardDrive className="w-6 h-6" />
                 </div>
                 <span className="px-3 py-1 rounded-full font-mono text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  internal/tools/filesystem
+                  internal/tools/... (15 atomic tools)
                 </span>
               </div>
 
@@ -130,8 +135,8 @@ export default function FeatureBentoGrid() {
                 <span className="text-emerald-400 font-bold">Latency: &lt;1.5ms</span>
               </div>
               <div className="space-y-1.5 text-[11px]">
-                <div className="flex items-center gap-2 text-slate-300">
-                  <span className="h-2 w-2 rounded-full bg-[#00f2fe]" /> 1. Calculate Unified Diff AST (`internal/ai`)
+                <div className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-[#00f2fe]" /> 1. Calculate Multi-Turn Tool AST (`internal/agent`)
                 </div>
                 <div className="flex items-center gap-2 text-slate-300">
                   <span className="h-2 w-2 rounded-full bg-purple-400" /> 2. Validate Target File Checksums & Locks
@@ -150,14 +155,18 @@ export default function FeatureBentoGrid() {
                 <div className="p-3.5 rounded-2xl bg-purple-500/15 text-purple-400 shadow-inner group-hover:scale-110 transition-transform">
                   <Terminal className="w-6 h-6" />
                 </div>
-                <span className="px-3 py-1 rounded-full font-mono text-xs bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                  package internal/ui
-                </span>
+                <div className="mb-4">
+                  <div className="text-xs font-mono text-slate-400 bg-black/40 px-3 py-1 rounded-lg border border-white/5 w-fit">
+                    package internal/ui/bubbles
+                  </div>
+                </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">
-                Lip Gloss & Glamour TUI (`internal/ui`)
-              </h3>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                  Lip Gloss & Bubble Tea UI (`internal/ui/bubbles`)
+                </h3>
+              </div>
               <p className="text-slate-300 text-sm leading-relaxed mb-6">
                 Say goodbye to unaligned terminal markdown. Features seamless Glamour table rendering, syntax-highlighted code blocks (`JetBrains Mono` compatible), and custom cyclone-themed word-wrapping TUI bubbles (`internal/ui/bubbles`).
               </p>

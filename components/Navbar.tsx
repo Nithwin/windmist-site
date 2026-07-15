@@ -55,7 +55,7 @@ export default function Navbar() {
                   WindMist
                 </span>
                 <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-[#00f2fe]/10 text-[#00f2fe] border border-[#00f2fe]/30 shadow-[0_0_10px_rgba(0,242,254,0.15)]">
-                  v1.0.2
+                  v1.0.1
                 </span>
               </div>
               <span className="text-[11px] text-slate-400 font-mono tracking-wider">
@@ -170,7 +170,7 @@ export default function Navbar() {
               className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#00f2fe] to-[#6a11cb] text-sm font-bold text-slate-950 shadow-lg"
             >
               <GithubIcon className="w-4 h-4" />
-              <span>Star on GitHub (v1.0.2)</span>
+              <span>Star on GitHub (v1.0.1)</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

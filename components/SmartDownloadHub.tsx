@@ -57,35 +57,26 @@ export default function SmartDownloadHub() {
 
   const binaryTargets: Record<PlatformKey, { title: string; subtitle: string; targets: BinaryTarget[] }> = {
     linux: {
-      title: "Linux Binaries & Packages",
-      subtitle: "Pre-compiled by GoReleaser v1.0.2 • Zero dependencies",
+      title: "Linux Binaries & Archives",
+      subtitle: "Pre-compiled by GoReleaser v1.0.1 • Zero dependencies",
       targets: [
         {
           name: "Linux x86_64 Tarball",
-          filename: "windmist_Linux_x86_64.tar.gz",
+          filename: "windmist_1.0.1_Linux_x86_64.tar.gz",
           arch: "x86_64 (64-bit AMD/Intel)",
-          size: "16.4 MB",
-          sha256: "e4f8a93b7c2d1e0f8a93b7c2d1e0f8a93b7c2d1e0f8a93b...",
+          size: "5.56 MB",
+          sha256: "e60c8142d0639eadc390105cb7988beeb83845c76293c797fc12eb4be557fb3f",
           type: "tarball",
-          command: "curl -sSL https://github.com/Nithwin/windmist/releases/download/v1.0.2/windmist_Linux_x86_64.tar.gz | tar -xz && sudo mv windmist /usr/local/bin/",
+          command: "curl -sSL https://github.com/Nithwin/windmist/releases/download/v1.0.1/windmist_1.0.1_Linux_x86_64.tar.gz | tar -xz && sudo mv windmist /usr/local/bin/",
         },
         {
           name: "Linux ARM64 Tarball",
-          filename: "windmist_Linux_arm64.tar.gz",
+          filename: "windmist_1.0.1_Linux_arm64.tar.gz",
           arch: "arm64 / aarch64 (AWS Graviton, Raspberry Pi)",
-          size: "15.8 MB",
-          sha256: "91c2b3a4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3...",
+          size: "5.08 MB",
+          sha256: "5871c63775e325ee3533814aef9f86f31d33eb8e10672bd93807af74dff3789f",
           type: "tarball",
-          command: "curl -sSL https://github.com/Nithwin/windmist/releases/download/v1.0.2/windmist_Linux_arm64.tar.gz | tar -xz && sudo mv windmist /usr/local/bin/",
-        },
-        {
-          name: "RedHat / Fedora RPM Package",
-          filename: "windmist-1.0.2-1.x86_64.rpm",
-          arch: "x86_64 RPM",
-          size: "16.6 MB",
-          sha256: "73b2c1d0e9f8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2...",
-          type: "rpm",
-          command: "sudo dnf install https://github.com/Nithwin/windmist/releases/download/v1.0.2/windmist-1.0.2-1.x86_64.rpm",
+          command: "curl -sSL https://github.com/Nithwin/windmist/releases/download/v1.0.1/windmist_1.0.1_Linux_arm64.tar.gz | tar -xz && sudo mv windmist /usr/local/bin/",
         },
       ],
     },
@@ -95,45 +86,45 @@ export default function SmartDownloadHub() {
       targets: [
         {
           name: "macOS Apple Silicon (M1 - M4)",
-          filename: "windmist_macOS_arm64.tar.gz",
+          filename: "windmist_1.0.1_Darwin_arm64.tar.gz",
           arch: "arm64 (Apple Silicon M1/M2/M3/M4)",
-          size: "16.1 MB",
-          sha256: "45a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7...",
+          size: "5.28 MB",
+          sha256: "527f72f6e0d582f30f7a9fd0d577842fc84849e81857a924fc7c56abfd74407e",
           type: "tarball",
-          command: "curl -sSL https://github.com/Nithwin/windmist/releases/download/v1.0.2/windmist_macOS_arm64.tar.gz | tar -xz && sudo mv windmist /usr/local/bin/",
+          command: "curl -sSL https://github.com/Nithwin/windmist/releases/download/v1.0.1/windmist_1.0.1_Darwin_arm64.tar.gz | tar -xz && sudo mv windmist /usr/local/bin/",
         },
         {
           name: "macOS Intel x86_64",
-          filename: "windmist_macOS_x86_64.tar.gz",
+          filename: "windmist_1.0.1_Darwin_x86_64.tar.gz",
           arch: "x86_64 (Intel Mac)",
-          size: "16.7 MB",
-          sha256: "88f7e6d5c4b3a2f1e0d9c8b7a6f5e4d3c2b1a0f9e8d7...",
+          size: "5.65 MB",
+          sha256: "c1814c928cb4f1f35ef790dcf951f38423dbbd485f1b91a07ec4e64d631dede3",
           type: "tarball",
-          command: "curl -sSL https://github.com/Nithwin/windmist/releases/download/v1.0.2/windmist_macOS_x86_64.tar.gz | tar -xz && sudo mv windmist /usr/local/bin/",
+          command: "curl -sSL https://github.com/Nithwin/windmist/releases/download/v1.0.1/windmist_1.0.1_Darwin_x86_64.tar.gz | tar -xz && sudo mv windmist /usr/local/bin/",
         },
       ],
     },
     windows: {
       title: "Windows Binaries",
-      subtitle: "Standalone executable and archive packages for Windows 10/11 x64",
+      subtitle: "Standalone zip archives for Windows 10/11 x64 and ARM64",
       targets: [
         {
-          name: "Windows Standalone Executable",
-          filename: "windmist.exe",
+          name: "Windows x86_64 Zip Archive",
+          filename: "windmist_1.0.1_Windows_x86_64.zip",
           arch: "x64 (Windows 10/11)",
-          size: "17.2 MB",
-          sha256: "22b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3...",
-          type: "exe",
-          command: "irm https://raw.githubusercontent.com/Nithwin/windmist/main/scripts/install.ps1 | iex",
+          size: "5.68 MB",
+          sha256: "efe86dc1d9df154f7658f1ed3c3a5d757fe0685e727cd6e3a3722d824ea28354",
+          type: "zip",
+          command: "iwr https://github.com/Nithwin/windmist/releases/download/v1.0.1/windmist_1.0.1_Windows_x86_64.zip -OutFile windmist.zip; Expand-Archive windmist.zip",
         },
         {
-          name: "Windows Archive Zip",
-          filename: "windmist_Windows_x86_64.zip",
-          arch: "x64 Zip Archive",
-          size: "17.0 MB",
-          sha256: "11a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2...",
+          name: "Windows ARM64 Zip Archive",
+          filename: "windmist_1.0.1_Windows_arm64.zip",
+          arch: "arm64 (Windows on ARM)",
+          size: "5.13 MB",
+          sha256: "996da861314f60904900bc4c8d1a336ec66dd4c02df6ad605a5200ffd792db0a",
           type: "zip",
-          command: "scoop bucket add nithwin https://github.com/Nithwin/windmist-bucket && scoop install windmist",
+          command: "iwr https://github.com/Nithwin/windmist/releases/download/v1.0.1/windmist_1.0.1_Windows_arm64.zip -OutFile windmist.zip; Expand-Archive windmist.zip",
         },
       ],
     },
@@ -148,11 +139,29 @@ export default function SmartDownloadHub() {
             <Download className="w-3.5 h-3.5" /> Smart Download & Installation Hub
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
-            Get <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00f2fe] via-cyan-300 to-[#6a11cb]">WindMist v1.0.2</span> for Your OS
+            Get <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00f2fe] via-cyan-300 to-[#6a11cb]">WindMist v1.0.1</span> for Your OS
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-400 text-base sm:text-lg mb-6">
             Every release is built automatically via GitHub Actions & GoReleaser, ensuring verifiable SHA256 checksums and zero CGO dependencies.
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://github.com/Nithwin/windmist/releases/tag/v1.0.1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#00f2fe] to-[#6a11cb] text-slate-950 font-bold text-sm hover:opacity-95 shadow-[0_0_20px_rgba(0,242,254,0.3)] transition-all transform hover:-translate-y-0.5"
+            >
+              <span>Official Release v1.0.1 on GitHub</span>
+            </a>
+            <a
+              href="https://github.com/Nithwin/windmist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#111622] hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-all"
+            >
+              <span>GitHub Repository</span>
+            </a>
+          </div>
         </div>
 
         {/* Smart OS Auto-Detection Banner */}

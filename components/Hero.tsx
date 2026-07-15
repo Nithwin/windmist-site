@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Copy, Check, Play, RefreshCw, Cpu, HardDrive, ShieldCheck, Sparkles, Code2, Zap } from "lucide-react";
 
-type OSTab = "maclinux" | "go" | "rpm" | "windows";
+type OSTab = "maclinux" | "go" | "source" | "windows";
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState<OSTab>("maclinux");
@@ -19,23 +19,23 @@ export default function Hero() {
   const installCommands: Record<OSTab, { label: string; subLabel: string; command: string }> = {
     maclinux: {
       label: "Linux & macOS",
-      subLabel: "curl | bash universal script",
+      subLabel: "Universal curl installation script",
       command: "curl -sSL https://raw.githubusercontent.com/Nithwin/windmist/main/scripts/install.sh | bash",
     },
     go: {
-      label: "Go Developers",
-      subLabel: "Requires Go 1.26+",
-      command: "go install github.com/Nithwin/windmist@latest",
+      label: "Go Toolchain",
+      subLabel: "Requires Go 1.25+",
+      command: "go install github.com/Nithwin/windmist/cmd/windmist@latest",
     },
-    rpm: {
-      label: "RedHat / Fedora",
-      subLabel: "Standalone RPM binary",
-      command: "sudo dnf install ./windmist-latest.rpm",
+    source: {
+      label: "Build from Source",
+      subLabel: "Clone GitHub repository & go build",
+      command: "git clone https://github.com/Nithwin/windmist.git && cd windmist && go build -o windmist ./cmd/windmist",
     },
     windows: {
-      label: "Windows x64",
-      subLabel: "Scoop package manager",
-      command: "scoop bucket add nithwin https://github.com/Nithwin/windmist-bucket && scoop install windmist",
+      label: "Windows (PowerShell)",
+      subLabel: "Download zip archive from Release v1.0.1",
+      command: "iwr https://github.com/Nithwin/windmist/releases/download/v1.0.1/windmist_1.0.1_Windows_x86_64.zip -OutFile windmist.zip; Expand-Archive windmist.zip",
     },
   };
 
@@ -96,7 +96,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#111622]/90 border border-white/10 shadow-[0_0_30px_rgba(0,242,254,0.15)] backdrop-blur-xl">
             <span className="flex h-2 w-2 rounded-full bg-[#00f2fe] animate-ping" />
             <span className="text-xs font-semibold uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-[#00f2fe] to-[#3CFAFA]">
-              Open-Source Engineering Agent v1.0.2
+              Open-Source Engineering Agent v1.0.1
             </span>
             <span className="text-slate-500 font-mono text-xs">|</span>
             <span className="text-xs text-slate-300 font-medium hidden sm:inline">
@@ -259,9 +259,9 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-3 text-[11px] text-slate-400">
                 <span className="flex items-center gap-1 text-emerald-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" /> Lip Gloss Engine v1.0.2
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" /> Lip Gloss Engine v1.0.1
                 </span>
-                <span className="hidden sm:inline">Go 1.26</span>
+                <span className="hidden sm:inline">Go 1.25+</span>
               </div>
             </div>
 

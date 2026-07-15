@@ -20,7 +20,7 @@ export default function Footer() {
                 WindMist
               </span>
               <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#00f2fe]/10 text-[#00f2fe] border border-[#00f2fe]/30">
-                v1.0.2
+                v1.0.1
               </span>
             </Link>
 
@@ -49,17 +49,17 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/#features" className="hover:text-[#00f2fe] transition-colors">
-                  AI Engine (`internal/ai`)
+                  Gemini Provider (`internal/providers`)
                 </Link>
               </li>
               <li>
                 <Link href="/#features" className="hover:text-[#00f2fe] transition-colors">
-                  Filesystem (`internal/tools/filesystem`)
+                  15 Tools (`internal/tools/...`)
                 </Link>
               </li>
               <li>
                 <Link href="/#features" className="hover:text-[#00f2fe] transition-colors">
-                  Lip Gloss TUI (`internal/ui`)
+                  Bubble Tea UI (`internal/ui/bubbles`)
                 </Link>
               </li>
               <li>
@@ -88,12 +88,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/#download" className="hover:text-[#00f2fe] transition-colors">
-                  RedHat / Fedora `.rpm` Package
+                  Windows `.zip` Archives (x64 & ARM64)
                 </Link>
               </li>
               <li>
                 <Link href="/#download" className="hover:text-[#00f2fe] transition-colors">
-                  Windows `windmist.exe` Standalone
+                  Source Code Archive (`.tar.gz`)
                 </Link>
               </li>
             </ul>
@@ -123,12 +123,12 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/Nithwin/windmist/blob/main/CHANGELOG.md"
+                  href="https://github.com/Nithwin/windmist/releases/tag/v1.0.1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#00f2fe] transition-colors flex items-center gap-1"
                 >
-                  <span>Changelog (v1.0.2)</span>
+                  <span>Changelog (v1.0.1)</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </li>

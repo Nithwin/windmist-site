@@ -35,7 +35,7 @@ export default function DocsPage() {
           <ChevronRight className="w-3.5 h-3.5" />
           <span className="text-[#00f2fe] font-bold">/docs</span>
           <span className="ml-auto flex items-center gap-1.5 text-emerald-400">
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" /> Stable Manual v1.0.2
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" /> Stable Manual v1.0.1
           </span>
         </div>
 
@@ -86,7 +86,7 @@ export default function DocsPage() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-between hover:text-[#00f2fe] transition-colors"
                 >
-                  <span>CHANGELOG.md (v1.0.2)</span>
+                  <span>CHANGELOG.md (v1.0.1)</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
@@ -111,7 +111,7 @@ export default function DocsPage() {
                       Install Universal Static Binary
                     </h3>
                     <p className="text-xs text-slate-400">
-                      Run our universal installation script which auto-detects your system architecture (`x86_64` vs `arm64`) and installs the latest verified release (`v1.0.2`) to `/usr/local/bin/windmist`:
+                      Run our universal installation script which auto-detects your system architecture (`x86_64` vs `arm64`) and installs the latest verified release (`v1.0.1`) to `/usr/local/bin/windmist`:
                     </p>
                     <div className="p-4 rounded-xl bg-[#06080c] border border-white/10 font-mono text-xs flex items-center justify-between">
                       <code className="text-[#00f2fe] truncate">
@@ -137,8 +137,9 @@ export default function DocsPage() {
                       WindMist connects directly to your preferred AI model endpoints with zero middleware latency. Configure your API key using the interactive terminal command:
                     </p>
                     <div className="p-4 rounded-xl bg-[#06080c] border border-white/10 font-mono text-xs text-slate-200">
-                      <div>$ windmist auth login --provider gemini --key AIzaSyYourSecureApiKey...</div>
-                      <div className="text-emerald-400 mt-1">✔ Successfully written to ~/.config/windmist/credentials.json (chmod 600)</div>
+                      <div>$ export GEMINI_API_KEY=&quot;your-gemini-api-key&quot;</div>
+                      <div>$ windmist set gemini_api_key &quot;your-gemini-api-key&quot;</div>
+                      <div className="text-emerald-400 mt-1">✔ Successfully saved in ~/.windmist/config.yaml</div>
                     </div>
                   </div>
 
@@ -152,9 +153,9 @@ export default function DocsPage() {
                     </p>
                     <div className="p-4 rounded-xl bg-[#06080c] border border-white/10 font-mono text-xs text-slate-200 space-y-1">
                       <div>$ cd ~/projects/my-go-service</div>
-                      <div>$ windmist chat --model gemini-2.5-pro --context ./pkg/server/router.go</div>
+                      <div>$ windmist chat &quot;Examine internal/agent and summarize the tool loop&quot;</div>
                       <div className="text-cyan-400 mt-2">
-                        [Agent] I analyzed `router.go`. Do you want me to generate the structured JWT validation diff? [y/N]
+                        [Agent] Inspecting internal/agent... Found autonomous multi-turn reasoning loop with 15 local tools. Do you want me to generate the refactored diff? [y/N]
                       </div>
                     </div>
                   </div>
@@ -324,7 +325,7 @@ ui:
                 <div className="space-y-2">
                   <h1 className="text-3xl font-extrabold text-white">Contributing & Architecture Rules</h1>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                    We invite contributors worldwide! When writing Go code for WindMist (`v1.0.2+`), please follow these non-negotiable guidelines.
+                    We invite contributors worldwide! When writing Go code for WindMist (`v1.0.1+`), please follow these non-negotiable guidelines.
                   </p>
                 </div>
 

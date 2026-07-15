@@ -217,18 +217,18 @@ windmist apply --yes`;
 
                   <div className="p-4 rounded-2xl bg-[#06080c] border border-white/10 space-y-3">
                     <h4 className="text-base font-bold text-white flex items-center gap-2">
-                      <ExternalLink className="w-4 h-4 text-purple-400" /> CHANGELOG.md — v1.0.2 Highlights
+                      <ExternalLink className="w-4 h-4 text-purple-400" /> CHANGELOG.md — v1.0.1 Highlights
                     </h4>
                     <div className="space-y-2 text-xs font-mono">
                       <div className="flex items-center justify-between text-emerald-400">
-                        <span>[v1.0.2] — 2026-07-15</span>
+                        <span>[v1.0.1] — 2026-07-15</span>
                         <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-[10px]">STABLE RELEASE</span>
                       </div>
-                      <p className="text-slate-400 font-sans">
-                        • Added first-class Gemini 2.5 Pro & Flash structured prompt builder (<code className="text-slate-200">internal/ai</code>)<br />
-                        • Refactored patch execution engine to guarantee single read/write operations per file<br />
-                        • Resolved markdown rendering conflicts between Lip Gloss and Glamour tables<br />
-                        • Automated multi-platform GoReleaser CI/CD pipeline for Linux/macOS/Windows targets
+                      <p className="text-slate-400 font-sans leading-relaxed">
+                        • <strong className="text-slate-200">eff2cea</strong>: Add GitHub issue templates and configuration to streamline reporting and feedback<br />
+                        • <strong className="text-slate-200">ec53af8</strong>: Add pull request template to .github directory<br />
+                        • <strong className="text-slate-200">066d96f</strong>: Implement GoReleaser configuration and dynamic versioning for automated releases<br />
+                        • <strong className="text-slate-200">4d9f2f6</strong>: Normalize formatting and whitespace across codebase and refine <code className="text-[#3CFAFA]">internal/providers/gemini</code> & <code className="text-[#3CFAFA]">internal/tools</code>
                       </p>
                     </div>
                   </div>
